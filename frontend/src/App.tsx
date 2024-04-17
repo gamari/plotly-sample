@@ -2,6 +2,7 @@ import { Data } from "plotly.js";
 import "./App.css";
 import { BarChart } from "./components/BarChart";
 import { ScatterChart } from "./components/ScatterChart";
+import { SplomChart } from "./components/SplomChart";
 
 const scatterDatas: Data[] = [
   {
@@ -39,6 +40,10 @@ function App() {
 
       <div>
         <ScatterChart datas={scatterDatas} />
+      </div>
+
+      <div>
+        <SplomChart />
       </div>
     </>
   );

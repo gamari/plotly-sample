@@ -12,7 +12,7 @@ export const ScatterChart = ({ datas }: Props) => {
       layout={{
         width: 800,
         height: 600,
-        title: "多変量連関図",
+        title: "散布図",
         xaxis: { title: "X軸" },
         yaxis: { title: "Y軸" },
       }}
