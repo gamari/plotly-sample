@@ -1,49 +1,43 @@
-import { Data } from "plotly.js";
-import "./App.css";
-import { BarChart } from "./components/BarChart";
-import { ScatterChart } from "./components/ScatterChart";
-import { SplomChart } from "./components/SplomChart";
+import { useState } from "react";
 
-const scatterDatas: Data[] = [
-  {
-    x: [1, 2, 3],
-    y: [2, 6, 3],
-    mode: "markers",
-    type: "scatter",
-    name: "Plot 1",
-    marker: { color: "blue" },
-  },
-  {
-    x: [1, 2, 3],
-    y: [4, 4, 4],
-    mode: "markers",
-    type: "scatter",
-    name: "Plot 2",
-    marker: { color: "red" },
-  },
-  {
-    x: [1, 2, 3],
-    y: [1, 5, 2],
-    mode: "markers",
-    type: "scatter",
-    name: "Plot 3",
-    marker: { color: "green" },
-  },
-];
+import { BarChart } from "./components/chart/BarChart";
+import { ScatterChart } from "./components/chart/ScatterChart";
+
+import "./App.css";
+
 
 function App() {
+  const [mode, setMode] = useState<"bar" | "scatter" | "splom">();
   return (
     <>
-      <div>
-        <BarChart />
-      </div>
+      <div className="flex flex-row">
+        <div>
+          <div className="p-6 border rounded-lg">
+            <div className="flex flex-col gap-4">
+              <div
+                className={`border px-3 py-2 rounded-md cursor-pointer ${
+                  mode == "bar" && "bg-gray-600 text-white"
+                }`}
+                onClick={() => setMode("bar")}
+              >
+                棒グラフ
+              </div>
+              <div
+                className={`border px-3 py-2 rounded-md cursor-pointer ${
+                  mode == "scatter" && "bg-gray-600 text-white"
+                }`}
+                onClick={() => setMode("scatter")}
+              >
+                散布図
+              </div>
+            </div>
+          </div>
+        </div>
 
-      <div>
-        <ScatterChart datas={scatterDatas} />
-      </div>
-
-      <div>
-        <SplomChart />
+        <div className="flex-1">
+          {mode === "bar" && <BarChart />}
+          {mode === "scatter" && <ScatterChart />}
+        </div>
       </div>
     </>
   );

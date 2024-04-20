@@ -10,6 +10,7 @@ const plotData: any = [
   {
     type: "splom",
     dimensions: dimensions,
+    diagonal: { visible: false },  // 対角線上のプロットを非表示
     marker: {
       color: "blue",
       size: 7,
