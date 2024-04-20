@@ -17,3 +17,15 @@ Django + React + Plotlyで作成したサンプルコードです。
   - マイグレーションの実行
     - python manage.py migrate
 
+## 準備
+
+- python -m venv venv
+- インタープリターの設定
+  - Shift + Command + P
+  - venvを指定する
+- ターミナルを削除して、起動し直すと、venvが有効になります。
+- python -m pip install -r requirements.txt
+- python manage.py migrate
+- python manage.py runserver
+
+
