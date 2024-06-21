@@ -4,13 +4,14 @@ import { BarChart } from "./components/chart/BarChart";
 import { ScatterChart } from "./components/chart/ScatterChart";
 
 import "./App.css";
-
+import { MenuBar } from "./components/menubar/TopBar";
 
 function App() {
   const [mode, setMode] = useState<"bar" | "scatter" | "splom">();
   return (
     <>
-      <div className="flex flex-row">
+      <MenuBar />
+      <div className="flex flex-row container mt-6 mx-auto">
         <div>
           <div className="p-6 border rounded-lg">
             <div className="flex flex-col gap-4">
